@@ -9,7 +9,7 @@ public class PeqUseCase {
 
     private final PeqRepository peqRepository;
 
-    public Flux<String> consumer(){
-        return peqRepository.consumer();
+    public void consumer(){
+         peqRepository.consumer();
     }
 }

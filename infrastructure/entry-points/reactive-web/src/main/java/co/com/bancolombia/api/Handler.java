@@ -13,13 +13,13 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class Handler {
 
-    @Autowired
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 private final PeqUseCase peqUseCase;
 public Mono<ServerResponse> listenPOSTUseCase(ServerRequest serverRequest) {
 
 
-    Flux<String> response=peqUseCase.consumer();
+    peqUseCase.consumer();
 
-    return ServerResponse.ok().bodyValue(response.toString());
+    return ServerResponse.ok().bodyValue("OK");
 }
 }
