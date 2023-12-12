@@ -18,10 +18,22 @@ private final PeqService peqService;
 
 public Mono<ServerResponse> listenPOSTUseCase(ServerRequest serverRequest) {
 
-    Flux<ResultadoParametrizacion> resp=peqService.consumer();
+//    var resp=peqService.consumer().map(resultadoParametrizacion ->resultadoParametrizacion
+//            .getValorParametrizado()
+//            .getValorDestino()
+//            .toString()
+//    ).subscribe();
 
-//    peqService.consumer().flatMap(z-> z.getValorParametrizado());
+//    peqService.consumer().map(list-> list.get(0)).log();
 
-    return ServerResponse.ok().bodyValue("OK " +resp.map(x-> x.getValorParametrizado()));
+    return ServerResponse.ok()
+            .bodyValue("OK " +peqService.consumer()
+            .map(resultadoParametrizacion ->resultadoParametrizacion
+                    .getValorParametrizado()
+                    .getValorDestino()
+                    .toString()
+            ).subscribe()
+
+    );
 }
 }
