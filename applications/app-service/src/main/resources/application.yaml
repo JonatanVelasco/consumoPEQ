@@ -55,7 +55,7 @@ service:
     peq-adapter:
       cacheName: "Caffeine"
       bridgeEndpoint: true
-      timeout: 5000
+      timeout: 10000
       socketTimeout: 10000
       user: "USER"
       serviceName: "CAPA-TRX"
@@ -64,5 +64,5 @@ service:
       serviceOperation: "consultarFactura"
       xmlDeclaration: ""
       writeTimeout: 5000
-      cacheExpireAfter: 30000
+      cacheExpireAfter: 5000
       uri: "https://acepeq-peqrequest-integration-common.apps.ocpdes.ambientesbc.lab/ace/peqadapter/equivalencesmanager"
