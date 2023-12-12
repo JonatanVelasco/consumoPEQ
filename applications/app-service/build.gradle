@@ -3,7 +3,6 @@ apply plugin: 'org.springframework.boot'
 dependencies {
 	implementation project( ':adapter')
 	implementation project( ':reactive-web')
-	implementation project( ':rest-consumer')
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation project(':model')
     implementation project(':usecase')

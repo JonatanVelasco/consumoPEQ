@@ -50,3 +50,19 @@ resilience4j:
         waitDurationInOpenState: "10s"
 cors:
   allowed-origins: "http://localhost:4200,http://localhost:8080"
+service:
+  internal:
+    peq-adapter:
+      cacheName: "Caffeine"
+      bridgeEndpoint: true
+      timeout: 5000
+      socketTimeout: 10000
+      user: "USER"
+      serviceName: "CAPA-TRX"
+      namespace: "http://grupobancolombia.com/intf/Producto/CashManagement/InscripcionDeFacturas/V1.0"
+      classification: "http://grupobancolombia.com/clas/AplicacionesActuales#CAPA-TRX"
+      serviceOperation: "consultarFactura"
+      xmlDeclaration: ""
+      writeTimeout: 5000
+      cacheExpireAfter: 30000
+      uri: "https://acepeq-peqrequest-integration-common.apps.ocpdes.ambientesbc.lab/ace/peqadapter/equivalencesmanager"

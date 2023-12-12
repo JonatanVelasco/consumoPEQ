@@ -1,7 +1,9 @@
 dependencies {
     implementation project(':usecase')
     implementation project(':model')
+    implementation project(':adapter')
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'co.com.bancolombia.integracion:reactive-peq-adapter:1.0.0'
     implementation 'io.micrometer:micrometer-registry-prometheus'
 }
